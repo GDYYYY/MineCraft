@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float speed;
-    //public Text countText;
-    //private int count;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +22,11 @@ public class PlayerMove : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        //if(moveVertical!=0)
-        //    print(moveVertical);
-
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        GetComponent<Rigidbody>().AddForce(movement * speed * Time.deltaTime);
-        //transform.position += movement * speed * Time.deltaTime;
+        //Vector3 force = movement * speed * Time.deltaTime;
+        //GetComponent<Rigidbody>().AddForce(force);
+        //Debug.Log(movement+" "+force);
+        //transform.position += force; // movement * speed * Time.deltaTime;
+        transform.Translate(movement*speed*Time.deltaTime,Space.Self);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3622202439979967071}
   - component: {fileID: 3622202439979967070}
   m_Layer: 0
-  m_Name: Solid
+  m_Name: Mud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

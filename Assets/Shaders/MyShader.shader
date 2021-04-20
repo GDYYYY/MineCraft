@@ -20,10 +20,12 @@
                 #pragma fragment MyFragmentProgram
                 
                 #pragma shader_feature USE_SPECULAR
-                #pragma shader_feature NORMAL_ONLY        
+                #pragma shader_feature NORMAL_ONLY   
+                #pragma enable_d3d11_debug_symbols
 
                 #include "UnityCG.cginc"
                 #include "UnityStandardBRDF.cginc"
+
 
                 float4 _MainColor;
                 float4 _DiffuseColor;
