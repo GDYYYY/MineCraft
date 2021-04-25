@@ -55,18 +55,25 @@
             float3 Schlick_F(half3 R, half cosA)
             {
                 //// TODO: your implementation
-                return float3(1,1,1);
+                float3 ans = R + (1 - R) * pow(1 - cosA, 5);
+                return ans;
+                //return float3(1,1,1);
             }
 
             float GGX_D(float roughness, float NdotH)
             {
                 //// TODO: your implementation
-                return 1;
+                float a2 = roughness * roughness;
+                float tmp = NdotH * NdotH * (a2 - 1) + 1;
+                float ans = a2 / (UNITY_PI * tmp * tmp);
+                return ans;
             }
 
             float CookTorrence_G (float NdotL, float NdotV, float VdotH, float NdotH){
                 //// TODO: your implementation
-                return 1;
+                float tmp = NdotH * 2 / VdotH;
+                return min(1, min(tmp * NdotV, tmp * NdotL));
+                //return 1;
             }
 
             FragmentData vert (VertexData v)
@@ -194,7 +201,7 @@
                 color += float4( UNITY_LIGHTMODEL_AMBIENT.xyz * albedo,1);
                 
                 //// Direct Diffuse only
-                return float4(directLight,1);
+                //return float4(directLight,1);
 
                 //// D only
                 // return float4(float3(1,1,1)* D,1);
@@ -205,7 +212,7 @@
                 //// G only
                 // return float4(float3(1,1,1)* G,1);
 
-                // return color;
+                 return color;
             }
             ENDCG
         }
