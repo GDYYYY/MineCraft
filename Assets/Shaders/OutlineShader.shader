@@ -37,13 +37,14 @@
                 o.Emission = _Emission;
             }
             ENDCG
-
+            
+            Name "OUTLINE"
                 //second
                 Pass{
                     Cull Front
 
                     CGPROGRAM
-
+                
                 #include "UnityCG.cginc"
 
                 #pragma vertex vert
@@ -63,6 +64,7 @@
 
                 v2f vert(appdata v) {
                     v2f o;
+                    v.normal.z=-0.5;
                     o.position = UnityObjectToClipPos(v.vertex + normalize(v.normal) * _OutlineThickness);
                     return o;
                 }

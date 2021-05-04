@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OutlineShader
-  m_Shader: {fileID: 4800000, guid: d015a55de5c040f4ea3bc0702c6aa288, type: 3}
-  m_ShaderKeywords: 
+  m_Name: pyro
+  m_Shader: {fileID: 4800000, guid: d110ff2131c3bf647bc9c3b6e9390cd1, type: 3}
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,6 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: def11ca34e3d1d64e9da1e33f07fc090, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -35,40 +39,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DiffuseCubeMap:
+        m_Texture: {fileID: 8900000, guid: 451b5f19a22333842a733300f0180e25, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Hatch0:
-        m_Texture: {fileID: 2800000, guid: 2374982ff9cf70d49b8f70050672b87b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Hatch1:
-        m_Texture: {fileID: 2800000, guid: dd5bc85d7a8695f46833ee879d31bc24, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Hatch2:
-        m_Texture: {fileID: 2800000, guid: 8faa7895452e7744d8aeb9a59fc63993, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Hatch3:
-        m_Texture: {fileID: 2800000, guid: 3537f12e551ab734d82d4c3e197cf0c3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Hatch4:
-        m_Texture: {fileID: 2800000, guid: 3d783b07a2baca7429ccc69b4ff50314, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Hatch5:
-        m_Texture: {fileID: 2800000, guid: 747869f50708980428be4090e99fc493, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ea1c3cc273e5e3d498a66216e63667b3, type: 3}
+        m_Texture: {fileID: 2800000, guid: fd25bfe86a015ea408bbe4c1fc5e649f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: def11ca34e3d1d64e9da1e33f07fc090, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -76,6 +64,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 2800000, guid: b39d104cbafc9494da6ef57627964ffe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RimMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -90,18 +90,20 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.1
-    - _OutlineThickness: 0.01
     - _Parallax: 0.02
-    - _Smoothness: 0
+    - _Rim: 3.5
+    - _RimPower: 1.7
     - _SmoothnessTextureChannel: 0
+    - _Specular: 128
+    - _SpecularFresnel: 0.25
     - _SpecularHighlights: 1
+    - _SpecularPower: 2.4
     - _SrcBlend: 1
-    - _TileFactor: 12
     - _UVSec: 0
+    - _Warp: 1.5
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.8301887, g: 0.6108677, b: 0.254539, a: 1}
+    - _RimColor: {r: 0.26, g: 0.19, b: 0.16, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
