@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public GameObject setting;
+    public List<Text> texts;
     private void Awake()
     {
         if (instance != null)
@@ -30,5 +32,10 @@ public class GameManager : MonoBehaviour
     public void settingMenu()
     {
         setting.SetActive(!setting.activeSelf);
+    }
+
+    public static void changeText(int type, float val)
+    {
+        instance.texts[type].text = val.ToString();
     }
 }
