@@ -107,11 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f072071dd800c40bb03db36aca5345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mass: 0.16071428
-  length: 1.5714285
+  mass: 1
+  length: 1.5
   nodeNum: 15
   iterations: 10
-  damping: 1
+  damping: 0
   curve: 2
   hairNode: {fileID: 4591132396326306443, guid: c9de38ddce326224babbd1257e175a35,
     type: 3}

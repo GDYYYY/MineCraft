@@ -14,7 +14,7 @@ public class HairController : MonoBehaviour
     public float length;
     [Range(0,1)]
     public float damping = 0;
-    [Range(5,20)]
+    [Range(1,20)]//5,20
     public int nodeNum = 15;
     [Range(1,2)]
     public float curve;
@@ -121,6 +121,7 @@ public class HairController : MonoBehaviour
             for (int i = curNum; i < hairNum; i++)
             {
                 Destroy(hairObjects[i]);
+                hairObjects.Remove(hairObjects[i]);//remove!!
             }
         }
         hairNum =curNum;
